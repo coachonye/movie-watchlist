@@ -1,4 +1,4 @@
-/* General Styling */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
@@ -8,7 +8,7 @@ body {
     text-align: center;
   }
   
-  /* Navigation Bar */
+  
   nav {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
@@ -85,7 +85,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
   }
   
-  /* Search Bar */
+  
   .search-container {
     position: relative;
     margin: 20px auto;
@@ -114,7 +114,7 @@ body {
     background-color: #e68900;
   }
   
-  /* Suggestions List */
+  
   .suggestions {
     list-style: none;
     background: rgba(0, 0, 0, 0.8);
@@ -134,7 +134,7 @@ body {
     background-color: #ff9800;
   }
   
-  /* Responsive Design */
+  
   @media (max-width: 768px) {
     .movies-container {
       flex-direction: column;

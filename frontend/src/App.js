@@ -7,13 +7,13 @@ import axios from 'axios';
 import './App.css';
 
 const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
-const BACKEND_URL = "http://localhost:5001/api/movies";
+const BACKEND_URL = "http://localhost:10000/api/movies";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
 
-  // Function to search for movies using TMDb API
+  
   const handleSearch = (query) => {
     if (query.trim() === "") {
       setMovies([]);
@@ -24,12 +24,12 @@ function App() {
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`)
       .then(res => {
         setMovies(res.data.results);
-        setSuggestions(res.data.results.slice(0, 5)); // Show only top 5 suggestions
+        setSuggestions(res.data.results.slice(0, 5));
       })
       .catch(err => console.error(err));
   };
 
-  // Function to add a movie to the watchlist in MongoDB
+  
   const addToWatchlist = (movie) => {
     axios.post(`${BACKEND_URL}/add`, {
       title: movie.title,
@@ -41,7 +41,7 @@ function App() {
     .catch(err => alert("Movie is already in Watchlist or an error occurred."));
   };
 
-  // Function to fetch and play movie trailer
+  
   const fetchMovieTrailer = (movieId) => {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`)
       .then(res => {
@@ -58,13 +58,13 @@ function App() {
 
   return (
     <Router>
-      {/* Navigation Menu */}
+      {}
       <nav>
         <Link to="/">Home</Link> | <Link to="/watchlist">My Watchlist</Link>
       </nav>
 
       <Routes>
-        {/* Home Page */}
+        {}
         <Route path="/" element={
           <div>
             <h1>Movie Watchlist</h1>

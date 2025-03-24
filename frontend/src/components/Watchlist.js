@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const BACKEND_URL = "http://localhost:5001/api/movies";
+const BACKEND_URL = "http://localhost:10000/api/movies";
 
 const Watchlist = () => {
   const [watchlist, setWatchlist] = useState([]);
