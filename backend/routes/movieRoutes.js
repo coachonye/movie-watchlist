@@ -2,12 +2,12 @@ const express = require('express');
 const Movie = require('../models/Movie');
 const router = express.Router();
 
-// Add a movie to the watchlist
+
 router.post('/add', async (req, res) => {
     try {
         const { title, tmdbId, posterPath, overview } = req.body;
         
-        // Check if movie already exists
+        
         const existingMovie = await Movie.findOne({ tmdbId });
         if (existingMovie) return res.status(400).json({ message: "Movie already in watchlist" });
 
@@ -19,7 +19,7 @@ router.post('/add', async (req, res) => {
     }
 });
 
-// Get all movies in the watchlist
+
 router.get('/', async (req, res) => {
     try {
         const movies = await Movie.find();
@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Remove a movie from the watchlist
+
 router.delete('/:id', async (req, res) => {
     try {
         await Movie.findByIdAndDelete(req.params.id);
